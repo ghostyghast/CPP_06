@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 18:00:04 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/14 18:25:47 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:36:53 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,7 @@ int main()
 
 	identify(ptr);
 	identify(ref);
+	
+	delete &ref;
+	delete ptr;
 }
