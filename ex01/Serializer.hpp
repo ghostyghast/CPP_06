@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:24:04 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/02 16:52:14 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:48:49 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 typedef struct Data
 {
+	long	l;
 	int		i;
 	char	c;
-	float	f;
 }	s_data;
 
 class Serializer{

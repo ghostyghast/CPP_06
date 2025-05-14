@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:22:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/05/14 17:22:05 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:52:44 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,31 @@ int main(void)
 	uintptr_t	ptr;
 	Data		*data_ptr;
 
+	data.l = 10;
 	data.i = 3;
 	data.c = 'a';
-	data.f = 10;
 	
+	cout << "Data before seriailze :" << "\n";
+	cout << "Data.l " << data.l << "\n";
+	cout << "Data.i " << data.i << "\n";
+	cout << "Data.c " << data.c << "\n";
+	cout << "---------------\n";
+
 	ptr = Serializer::serialize(&data);
 	
-	int		*int_ptr = reinterpret_cast<int*>(ptr);
+	long	*long_ptr = reinterpret_cast<long*>(ptr);
+	cout << "*long_ptr: " << *long_ptr++ << "\n";
+	int		*int_ptr = reinterpret_cast<int*>(long_ptr);
 	cout << "*int_ptr: " << *int_ptr++ << '\n';
 	char	*char_ptr = reinterpret_cast<char*>(int_ptr);
-	cout << "*char_ptr: " << *char_ptr++ << '\n';
-	float	*float_ptr = reinterpret_cast<float*>(char_ptr);
-	cout << "*float_ptr: " << *float_ptr<< "\n";
+	cout << "*char_ptr: " << *char_ptr << '\n';
 	
 	data_ptr = Serializer::deserialize(ptr);
-	cout << "data_ptr->i: " << data_ptr->i << "\n";
+
+	cout << "---------------\n";
+	cout << "Data After seriailze :" << "\n";
+	cout << "Data.l " << data.l << "\n";
+	cout << "Data.i " << data.i << "\n";
+	cout << "Data.c " << data.c << "\n";
+	
 }
